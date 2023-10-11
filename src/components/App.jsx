@@ -31,11 +31,11 @@ export class App extends Component {
             );
           }
 
-          this.setState({
+          this.setState(prevState => ({
             hits: [...prevState.hits, ...data.hits],
             showBtn: true,
             loading: false,
-          });
+          }));
           if (this.state.page >= data.totalHits / 12) {
             this.setState({
               showBtn: false,
